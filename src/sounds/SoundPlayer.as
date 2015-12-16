@@ -20,11 +20,11 @@ package sounds
 		{
 			_main = main;			
 			
-			loadSound("../lib/pong.mp3");			
-			loadSound("../lib/pong2.mp3");			
-			loadSound("../lib/pong3.mp3");	
-			loadSound("../lib/lose.mp3");	
-			loadSound("../lib/intro.mp3");	
+			loadSound("../lib/Supa Hot Fire Reaction.mp3");		
+		    loadSound("../lib/21 Sound Effect.mp3");			
+			//loadSound("../lib/9+10=21 remix HD.mp3");	
+			//loadSound("../lib/9+10=21 remix HD.mp3");	
+			//loadSound("../lib/9+10=21 remix HD.mp3");	
 						
 			_main.addEventListener(GameScreen.BALL_BOUNCE, onBounce, true);
 			_main.addEventListener(GameScreen.GAME_OVER, onGameOver, true);
@@ -34,16 +34,16 @@ package sounds
 		
 		private function onIntro(e:Event):void 
 		{
-			playSound(4);
+			playSound(1);
 		}
 		
 		private function onGameOver(e:Event):void 
 		{
-			playSound(3);
+			playSound(1);
 		}		
 		private function onBounce(e:Event):void 
 		{
-			playSound(Math.floor(Math.random() * 3));
+			playSound(Math.floor(Math.random() * 2));
 		}
 		private function loadSound(file:String):void
 		{

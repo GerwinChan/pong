@@ -5,6 +5,7 @@ package
 	import screens.GameOverScreen;
 	import screens.GameScreen;
 	import screens.IntroScreen;
+	import screens.WinScreen;
 	import sounds.SoundPlayer;
 	
 	/**
@@ -16,7 +17,9 @@ package
 		private var gameScreen:GameScreen
 		private var introScreen:IntroScreen;
 		private var gameOverScreen:GameOverScreen;
+		private var winScreen:WinScreen;
 		private var soundPlayer:SoundPlayer;
+		private var background:achtergrond;
 		
 		public function Main() 
 		{
@@ -28,7 +31,10 @@ package
 			removeEventListener(Event.ADDED_TO_STAGE, init);
 			// entry point			
 			soundPlayer = new SoundPlayer(this);
-			buildIntroSreen();	
+
+			background = new (achtergrond);
+			addChild(background);
+			buildIntroSreen();
 		}
 		private function buildIntroSreen():void
 		{			
@@ -42,6 +48,7 @@ package
 			gameScreen = new GameScreen();
 			addChild(gameScreen);
 			gameScreen.addEventListener(GameScreen.GAME_OVER, onGameOver);
+			gameScreen.addEventListener(GameScreen.WIN_GAME, onWinGame);
 			
 			
 			
@@ -58,11 +65,28 @@ package
 			
 			
 			
-		}		
+		}
+
+		private function onWinGame(e:Event):void 
+		{
+			removeChild(gameScreen);
+			gameScreen.removeEventListener(GameScreen.WIN_GAME, onWinGame);
+						
+			winScreen = new WinScreen();
+			addChild(winScreen);
+			winScreen.addEventListener(WinScreen.RESET, onReset);
+		
+		
+			
+			
+		}
 		private function onReset(e:Event):void 
 		{
-			removeChild(gameOverScreen);
-			gameOverScreen.removeEventListener(GameOverScreen.RESET, onReset);
+			e.target.removeEventListener(GameOverScreen.RESET, onReset);
+			if(winScreen != null)if(this.contains(winScreen))removeChild(winScreen);
+			if(gameOverScreen != null)if(this.contains(gameOverScreen))removeChild(gameOverScreen);
+			//gameOverScreen.removeEventListener(GameOverScreen.RESET, onReset);
+			//winScreen.removeEventListener(WinScreen.RESET, onReset);
 			
 			buildIntroSreen();
 		}

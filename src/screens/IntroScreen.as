@@ -34,7 +34,7 @@ package screens
 						
 			title = new TextField();
 			title.embedFonts = true;
-			title.text = "Pong";
+			title.text = "9 plus 10 pong";
 			title.autoSize = TextFieldAutoSize.CENTER;			
 			title.setTextFormat(textFormat);		
 			
@@ -49,12 +49,12 @@ package screens
 			
 			start = new TextField();
 			start.embedFonts = true;
-			start.text = "press space to start";
+			start.text = "Press start";
 			start.autoSize = TextFieldAutoSize.CENTER;
 			start.setTextFormat(subFormat)
 			
 			start.x = stage.stageWidth / 2 - start.textWidth / 2;
-			start.y = stage.stageHeight / 2 + 20;
+			start.y = stage.stageHeight / 1.7 + 20;
 			
 			addChild(start);
 			

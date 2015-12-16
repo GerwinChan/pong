@@ -8,7 +8,7 @@ package screens
 	 */
 	public class Screen extends MovieClip
 	{
-		[Embed(source = "../../lib/starjedi/Starjedi.ttf",
+		[Embed(source = "../../lib/starjedi/gunplay rg.ttf",
 		fontName = "jedi", 
 		mimeType = "application/x-font", 
 		fontWeight="normal", 
@@ -27,18 +27,18 @@ package screens
 			textFormat = new TextFormat();
 			textFormat.font = "jedi";
 			textFormat.size = 60;
-			textFormat.color = 0xffffff;
+			textFormat.color = 014014014;
 			
 			
 			subFormat = new TextFormat();
 			subFormat.font = "jedi";
-			subFormat.size = 20;
-			subFormat.color = 0xff0000;
+			subFormat.size = 25;
+			subFormat.color = 015015015;
 			
 			scoreFormat = new TextFormat();
 			scoreFormat.font = "jedi";
 			scoreFormat.size = 40;
-			scoreFormat.color = 0xffffff;
+			scoreFormat.color = 018018018;
 			
 		}
 		

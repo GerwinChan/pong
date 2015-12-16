@@ -1,4 +1,5 @@
-package screens {
+package screens 
+{
 	import flash.events.Event;
 	import flash.text.TextFormat;
 	import flash.text.TextField;
@@ -10,12 +11,12 @@ package screens {
 	 * ...
 	 * @author erwin henraat
 	 */
-	public class GameOverScreen extends Screen 
+	public class WinScreen extends Screen 
 	{
 		private var title:TextField;
 		private var timer:Timer;
 		public static const RESET:String = "reset";
-		public function GameOverScreen() 
+		public function WinScreen() 
 		{
 			this.addEventListener(Event.ADDED_TO_STAGE, init);
 			
@@ -27,7 +28,7 @@ package screens {
 						
 			title = new TextField();
 			title.embedFonts = true;
-			title.text = "You lose!";
+			title.text = "You win!";
 			title.autoSize = TextFieldAutoSize.CENTER;			
 			title.setTextFormat(textFormat);		
 			
